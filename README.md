@@ -82,11 +82,9 @@ O primeiro objetivo de producao e um vertical slice com:
 
 ## Unity
 
-O projeto Unity ainda nao deve ser simulado por arquivos falsos. Quando for criado, ele deve ficar em:
+O projeto Unity real existe e permanece, durante a transicao, em `unity/FragmentosDoAmanha/`. A migracao aprovada vai transferir o projeto completo para `Game/Unity/FragmentosDoAmanha/`, preservando `Assets/`, `Packages/`, `ProjectSettings/`, todos os arquivos `.meta` e GUIDs. Nao mova essa pasta manualmente; a transferencia sera feita em uma fase isolada, seguida de validacao no Unity Editor.
 
-`unity/FragmentosDoAmanha/`
-
-A estrutura esperada para o projeto Unity esta documentada em [Unity Production Pipeline](docs/08_UnityPipeline/unity-production-pipeline.md).
+A estrutura e os procedimentos tecnicos atuais continuam documentados em [Unity Production Pipeline](docs/08_UnityPipeline/unity-production-pipeline.md).
 
 ## Uso de IA
 
