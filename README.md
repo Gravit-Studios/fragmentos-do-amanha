@@ -15,6 +15,31 @@ O jogo usa duas camadas de arte:
 
 ## Estrutura do repositorio
 
+A arquitetura de destino foi aprovada em 15/11/2026. A migracao sera feita por
+etapas; enquanto cada etapa nao for concluida, os caminhos antigos continuam
+sendo os caminhos fisicos ativos. Consulte o manual oficial e o plano:
+
+- [Manual de organizacao](Documents/TechnicalDocumentation/PROJECT_ORGANIZATION_GUIDE.md)
+- [Plano de migracao](Documents/TechnicalDocumentation/REPOSITORY_MIGRATION_PLAN.md)
+
+Estrutura de destino:
+
+- `Game/` - assets aprovados e projeto Unity completo em `Game/Unity/FragmentosDoAmanha/`.
+- `Sprites/` - producao visual, PSDs, PNGs, estudos, spritesheets e historico.
+- `Artbook/` - concepts, ilustracoes, referencias, branding e publicacoes.
+- `Documents/` - GDD, narrativa, personagens, game design e documentacao tecnica.
+- `Production/` - prompts, workflows, ferramentas, status e roadmap.
+
+**Fluxo de assets:** produzir em `Sprites/`, preservar PSD + PNG e versoes
+relevantes, aguardar a aprovacao explicita "Aprovado", publicar a exportacao em
+`Game/ApprovedAssets/` e integrar a mesma exportacao no projeto Unity.
+
+**Durante a migracao:** o projeto Unity continua fisicamente em
+`unity/FragmentosDoAmanha/` ate a fase especifica de transferencia. Nao mova
+essa pasta manualmente nem crie uma segunda copia do projeto.
+
+## Estrutura legada (caminhos ativos ate a migracao de cada area)
+
 - `unity/FragmentosDoAmanha/` - o projeto Unity real. Tudo que e necessario para o jogo funcionar vive aqui, incluindo sprites/tilesets ja em `Assets/Art/` (mesmo os ainda nao configurados/importados). Nao existe mais uma pasta `art/` separada na raiz -- assets novos (incluindo os gerados por IA) devem ser salvos direto dentro de `unity/FragmentosDoAmanha/Assets/Art/...`.
 - `artbook/` - tudo que NAO entra diretamente no jogo: concept art, ilustracao, branding, PDFs do concept book e material de referencia/estudo (inclui `pixel-reference/`, com sheets e crops usados como referencia de pose/estilo, nao como arte final).
 - `docs/` - Documentacao viva do projeto, organizada por area de producao.
