@@ -184,7 +184,55 @@ unity/FragmentosDoAmanha/Assets/Scripts/UI/PrototypeObjectiveHud.cs
 - Manter respostas e documentos em portugues, exceto nomes tecnicos, paths e codigo.
 - Usar ASCII em arquivos novos, salvo se o arquivo existente ja usar acentos de forma consistente.
 
-## Arte e prompts
+## Organization and asset lifecycle (approved 2026-11-15)
+
+The repository is transitioning to the official structure defined in
+`Documents/TechnicalDocumentation/PROJECT_ORGANIZATION_GUIDE.md`.
+
+Target top-level areas:
+- `Game/`: approved game deliverables and the complete Unity project.
+- `Sprites/`: working source, PSD masters, PNG exports, studies and meaningful versions.
+- `Artbook/`: concepts, presentation art, references, branding and publications.
+- `Documents/`: authoritative design and technical documentation.
+- `Production/`: prompts, workflows, tools, status and roadmap.
+
+Asset approval is explicit: only the user's message **"Aprovado"** promotes an asset.
+PSD is the editable source where applicable; PNG is the lossless export. Preserve
+meaningful versions and studies.
+
+Weapons are organized by era, then wielder/character. Enemies and bosses have
+separate collections from protagonists. Environments are modular-first and
+organized by era/location with tilesets, gameplay pieces, backgrounds, parallax,
+foreground, props and set pieces.
+
+### Migration transition
+
+The organization plan has been approved and the documentation policy is being
+updated. Until the dedicated Unity migration phase is completed, the existing
+Unity project remains at `unity/FragmentosDoAmanha/`. Do not move it manually.
+After migration, the canonical Unity path will be
+`Game/Unity/FragmentosDoAmanha/`.
+
+New visual work belongs in the appropriate `Sprites/` working folder. Only
+explicitly approved exports go to `Game/ApprovedAssets/`; the Unity integration
+copy is placed under the Unity project's `Assets/` folder when that project
+migration and integration workflow are ready.
+
+### Current working paths during transition
+
+The existing prompt and technical documentation paths remain authoritative
+until their corresponding documentation migration batch is completed:
+
+```text
+docs/03_VisualDevelopment/character-image-prompts.md
+docs/03_VisualDevelopment/environment-image-prompts.md
+unity/FragmentosDoAmanha/Assets/
+artbook/
+```
+
+Do not assume a target path exists until the relevant migration batch is merged.
+Do not maintain two competing editable masters.
+
 
 Prompts oficiais:
 
