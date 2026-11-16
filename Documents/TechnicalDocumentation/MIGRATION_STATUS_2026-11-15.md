@@ -1,4 +1,4 @@
-# Migration Status — 2026-11-15
+# Migration Status — updated 2026-11-16
 
 ## Completed
 
@@ -8,7 +8,7 @@
 - [x] Phase 0 repository tree inventory captured.
 - [x] Git LFS pointer format verified against representative PNG and PDF objects.
 - [x] PR #3 merged: target directory skeleton and category READMEs created.
-- [x] Phase 2 destination structure is present on main.
+- [x] Phase 2 destination structure is present on main.\n- [x] PR #5 merged: 209 files relocated from legacy roots into Artbook/, Documents/, Production/ and Sprites/.\n- [x] Removed duplicate lowercase roots artbook/, docs/, production/, sprites/ and legacy roots ChatGPT/ and tools/.
 
 ## In progress / pending
 
@@ -34,10 +34,10 @@
 ## Active paths during transition
 
 The Unity project remains at `unity/FragmentosDoAmanha/`. Do not move it manually.
-The target destination is `Game/Unity/FragmentosDoAmanha/`.
+The target destination is `Game/Unity/FragmentosDoAmanha/`.\nAll non-Unity content roots now use the approved canonical names.
 
 New artwork is produced in `Sprites/`; only assets explicitly approved with **Aprovado** may be promoted to `Game/ApprovedAssets/`.
 
 ## Next execution batch
 
-Start with documentation and Artbook content because those moves do not require Unity Editor serialization. Preserve source provenance, keep an old-to-new path manifest, and update all Markdown links in the same migration batch. The Unity relocation remains isolated and blocked on local Git LFS and Editor validation.
+Complete link/reference normalization and content indexes. The Unity relocation remains isolated and blocked on local Git LFS and Editor validation.
