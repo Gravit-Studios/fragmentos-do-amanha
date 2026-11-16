@@ -63,7 +63,7 @@ Exit: documentation links resolve and no old path instruction contradicts the ne
 Create target directories and concise README/index files. Do not move assets yet.
 
 ### Phase 3 — Migrate documentation and tools
-Move documents by category; compare duplicate GDD, technical specs, character briefs and visual guidelines; preserve provenance; move prompts and helper scripts; update Markdown and script paths.
+Initial relocation completed in PR #5. Complete remaining cross-document link/reference normalization and semantic index review.
 
 ### Phase 4 — Migrate Artbook
 Initial relocation completed in PR #5. Preserve source pages, indexes and meaningful versions; complete category/index review and validate media locally where possible.
