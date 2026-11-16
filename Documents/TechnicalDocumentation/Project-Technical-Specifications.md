@@ -3,7 +3,7 @@
 **Documento:** referencia tecnica consolidada para continuidade do projeto  
 **Atualizado em:** 2026-11-10  
 **Repositorio:** https://github.com/Gravit-Studios/fragmentos-do-amanha  
-**Projeto Unity:** `unity/FragmentosDoAmanha`
+**Projeto Unity:** `Game/Unity/FragmentosDoAmanha`
 
 > Este documento consolida as decisoes de design e o estado tecnico registrado no repositorio. Para o estado operacional mais recente, prevalecem `AGENTS.md`, `production/handoff-current-state.md` e `production/roadmap.md`. Quando houver divergencia entre este resumo e esses arquivos, atualizar este documento a partir das fontes versionadas.
 
@@ -90,7 +90,7 @@ A versao efetiva deve ser conferida em `ProjectSettings/ProjectVersion.txt` ante
 Abrir no Unity Hub a pasta:
 
 ```text
-unity/FragmentosDoAmanha
+Game/Unity/FragmentosDoAmanha
 ```
 
 Nao abrir a raiz do repositorio como projeto Unity.
@@ -134,7 +134,7 @@ O kit de Theo para a demo esta limitado a ataque basico e dash, sem antecipar ha
 
 ## 9. Scripts e responsabilidades
 
-Caminho base: `unity/FragmentosDoAmanha/Assets/Scripts/`.
+Caminho base: `Game/Unity/FragmentosDoAmanha/Assets/Scripts/`.
 
 | Script | Responsabilidade registrada |
 |---|---|
@@ -194,7 +194,7 @@ Os prompts-base reutilizaveis definidos no projeto sao:
 - **Single Tile:** um unico tile 32x32, isolado, ocupando a area, sem cena ou variacoes extras.
 - **Character Sprite / Run Cycle:** personagem com escala, silhueta, orientacao e linha de chao consistentes.
 
-Os prompts completos e regras de validacao ficam em `docs/03_VisualDevelopment/sprite-prompt-guide.md`, `docs/03_VisualDevelopment/pixel-art-bible.md` e nas bibliotecas em `docs/03_VisualDevelopment/prompts/`. Ao solicitar os atalhos `Tileset Sheet prompt base` ou `Single Tile prompt base`, aplicar as especificacoes reutilizaveis correspondentes e acrescentar somente os detalhes do asset solicitado.
+Os prompts completos e regras de validacao ficam em `Documents/ArtDirection/VisualDevelopment/sprite-prompt-guide.md`, `Documents/ArtDirection/VisualDevelopment/pixel-art-bible.md` e nas bibliotecas em `Documents/ArtDirection/VisualDevelopment/prompts/`. Ao solicitar os atalhos `Tileset Sheet prompt base` ou `Single Tile prompt base`, aplicar as especificacoes reutilizaveis correspondentes e acrescentar somente os detalhes do asset solicitado.
 
 ### Theo — padrao de sprite v04
 
@@ -204,7 +204,7 @@ Os prompts completos e regras de validacao ficam em `docs/03_VisualDevelopment/s
 - Linha dos pes em `y=987` para poses no solo (Idle, Run, Attack).
 - Poses no ar mantem a altura real do movimento; nao alinhar artificialmente o pe em y=987.
 - Nome: `theo-sprite-<pose>-NN.png`.
-- Visual v04 desenhado manualmente no Photoshop, usando o template `docs/03_VisualDevelopment/theo-sprite-canvas-template-1024.png`.
+- Visual v04 desenhado manualmente no Photoshop, usando o template `Documents/ArtDirection/VisualDevelopment/theo-sprite-canvas-template-1024.png`.
 
 Estado de animacoes descrito no handoff:
 - Idle: 6 frames, integrado e validado.
@@ -214,7 +214,7 @@ Estado de animacoes descrito no handoff:
 - Crouch: 4 frames recebidos, sem mecanica de agachar e sem integracao de gameplay.
 - Land, Fall e HitDeath: pendentes; HitDeath exige arte especifica fora da ficha atual.
 
-**Nota de consistencia:** `unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/README.md` e o handoff podem divergir sobre o status de Run e testes. O handoff registra o defeito de alternancia como bloqueador visual; confirmar os arquivos e o comportamento real no Editor antes de alterar o status para concluido.
+**Nota de consistencia:** `Game/Unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/README.md` e o handoff podem divergir sobre o status de Run e testes. O handoff registra o defeito de alternancia como bloqueador visual; confirmar os arquivos e o comportamento real no Editor antes de alterar o status para concluido.
 
 ## 12. Assets, pastas e versionamento
 
@@ -222,13 +222,13 @@ Estado de animacoes descrito no handoff:
 
 Assets necessarios para o jogo funcionar devem ficar diretamente dentro do projeto Unity:
 
-- `unity/FragmentosDoAmanha/Assets/Art/Characters/`
-- `unity/FragmentosDoAmanha/Assets/Art/Tilesets/`
-- demais categorias sob `unity/FragmentosDoAmanha/Assets/Art/`
+- `Game/Unity/FragmentosDoAmanha/Assets/Art/Characters/`
+- `Game/Unity/FragmentosDoAmanha/Assets/Art/Tilesets/`
+- demais categorias sob `Game/Unity/FragmentosDoAmanha/Assets/Art/`
 
 Materiais que nao entram no jogo (concept art, ilustracoes, branding, PDFs, reference sheets e crops) ficam em `artbook/`.
 
-Documentacao viva e tecnica fica em `docs/`; planejamento e estado de producao ficam em `production/`; documentos historicos/de design vindos do ChatGPT ficam em `ChatGPT/`.
+Documentacao viva e tecnica fica em `Documents/`; planejamento e estado de producao ficam em `production/`; documentos historicos/de design vindos do ChatGPT ficam em `ChatGPT/`.
 
 ### Regras Git/Unity
 
@@ -245,7 +245,7 @@ Documentacao viva e tecnica fica em `docs/`; planejamento e estado de producao f
 1. Consultar `AGENTS.md`, `production/handoff-current-state.md` e `production/roadmap.md`.
 2. Definir se o asset e material de jogo ou referencia de artbook.
 3. Criar/editar o asset conforme os guias e prompts oficiais.
-4. Salvar assets de jogo diretamente em `unity/FragmentosDoAmanha/Assets/Art/`.
+4. Salvar assets de jogo diretamente em `Game/Unity/FragmentosDoAmanha/Assets/Art/`.
 5. Importar/configurar pela Unity e atualizar scripts de editor quando necessario.
 6. Testar no Play Mode e, para a demo, validar build standalone.
 7. Atualizar indice de assets, status, handoff e roadmap conforme o impacto.
@@ -285,11 +285,11 @@ Nao marcar itens como concluidos sem evidencia no repositorio e validacao corres
 - `production/roadmap.md` — escopo, fases e checklist.
 - `production/production-handbook.md` — fluxo de producao.
 - `production/ai-assisted-production-pipeline.md` — pipeline assistido por IA.
-- `docs/00_Project/project-overview.md` — visao geral e pilares.
-- `docs/08_UnityPipeline/prototype-theo-controller.md` — cena/controlador e sistemas do prototipo.
-- `docs/03_VisualDevelopment/pixel-art-bible.md` — padrao visual pixel art.
-- `docs/03_VisualDevelopment/sprite-prompt-guide.md` — prompts e escalas.
-- `unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/README.md` — organizacao dos frames de Theo.
+- `Documents/GDD/Project/project-overview.md` — visao geral e pilares.
+- `Documents/UnityPipeline/prototype-theo-controller.md` — cena/controlador e sistemas do prototipo.
+- `Documents/ArtDirection/VisualDevelopment/pixel-art-bible.md` — padrao visual pixel art.
+- `Documents/ArtDirection/VisualDevelopment/sprite-prompt-guide.md` — prompts e escalas.
+- `Game/Unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/README.md` — organizacao dos frames de Theo.
 - `ChatGPT/GDD.md` e subpastas de `ChatGPT/` — GDD e documentos historicos de design/narrativa.
 
 ---
