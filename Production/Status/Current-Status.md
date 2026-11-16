@@ -1,5 +1,7 @@
 # Current Status
 
+> Atualizacao de organizacao (2026-11-16): o projeto Unity foi movido para `Game/Unity/FragmentosDoAmanha/`. Antes de abrir, sincronize a main, confirme Git LFS e valide o projeto no Editor.
+
 Atualizado em: 2026-07-09 (sessao Codex web)
 
 ## Objetivo deste documento
@@ -29,7 +31,7 @@ Clonado direto pelo Unity Hub (import project from Git). Nao usar mais os caminh
 Projeto Unity:
 
 ```text
-C:\Users\Gean Santos\Downloads\fragmentos-do-amanha\unity\FragmentosDoAmanha
+C:\Users\Gean Santos\Downloads\fragmentos-do-amanha\Game\Unity\FragmentosDoAmanha
 ```
 
 ### Mac
@@ -45,7 +47,7 @@ Movido para fora de `Downloads` porque o macOS (Sonoma+) restringe acesso de app
 Projeto Unity:
 
 ```text
-/Users/geansantos/fragmentos-do-amanha/unity/FragmentosDoAmanha
+/Users/geansantos/fragmentos-do-amanha/Game/Unity/FragmentosDoAmanha
 ```
 
 ### Regra comum
@@ -79,8 +81,8 @@ Ja existe:
 - scripts e menu de editor para gerar `VS_Egypt_Blockout`.
 - cena `VS_Egypt_Blockout` gerada localmente e adicionada ao Build Settings;
 - portal temporal placeholder preparado para carregar a cena do Egito apos completar o objetivo;
-- rascunho de lista de habilidades do Theo por epoca (`docs/04_Characters/theo-abilities.md`), aguardando revisao;
-- rascunho de mecanica de fragmentos com dois niveis (`docs/00_Project/fragments-mechanic.md`), aguardando revisao.
+- rascunho de lista de habilidades do Theo por epoca (`Documents/Characters/theo-abilities.md`), aguardando revisao;
+- rascunho de mecanica de fragmentos com dois niveis (`Documents/GDD/Project/fragments-mechanic.md`), aguardando revisao.
 
 Ainda nao existe:
 
@@ -139,14 +141,14 @@ Observacao: `brew` nao estava disponivel no terminal local, entao o Git LFS aind
 Cena:
 
 ```text
-unity/FragmentosDoAmanha/Assets/Scenes/Prototype_Theo_Controller.unity
-unity/FragmentosDoAmanha/Assets/Scenes/VS_Egypt_Blockout.unity
+Game/Unity/FragmentosDoAmanha/Assets/Scenes/Prototype_Theo_Controller.unity
+Game/Unity/FragmentosDoAmanha/Assets/Scenes/VS_Egypt_Blockout.unity
 ```
 
 Documentacao:
 
 ```text
-docs/08_UnityPipeline/prototype-theo-controller.md
+Documents/UnityPipeline/prototype-theo-controller.md
 ```
 
 Implementado:
@@ -191,7 +193,7 @@ Controles:
 
 Proximo teste recomendado:
 
-1. Abrir `unity/FragmentosDoAmanha` no Unity Hub.
+1. Abrir `Game/Unity/FragmentosDoAmanha` no Unity Hub.
 2. Abrir `Assets/Scenes/Prototype_Theo_Controller.unity`.
 3. Rodar Play Mode.
 4. Avaliar peso do pulo, velocidade horizontal, pulo em plataformas, movimento no ar, queda/respawn, camera, zona de dano, HUD, ataque, dash, inimigo com telegraph, fragmento coletavel e leitura da sala.
@@ -207,7 +209,7 @@ Personagens:
 ```text
 art/pixel/characters/
 art/illustration/characters/
-docs/03_VisualDevelopment/character-image-prompts.md
+Documents/ArtDirection/VisualDevelopment/character-image-prompts.md
 ```
 
 Cenarios:
@@ -215,7 +217,7 @@ Cenarios:
 ```text
 art/pixel/environments/
 art/illustration/environments/
-docs/03_VisualDevelopment/environment-image-prompts.md
+Documents/ArtDirection/VisualDevelopment/environment-image-prompts.md
 ```
 
 Cenarios ja criados:
@@ -231,15 +233,15 @@ README.md
 production/roadmap.md
 production/vertical-slice-plan.md
 production/production-handbook.md
-docs/00_Project/project-overview.md
-docs/03_VisualDevelopment/visual-development-guide.md
-docs/03_VisualDevelopment/concept-book-outline.md
-docs/03_VisualDevelopment/concept-book-page-plan.md
-docs/03_VisualDevelopment/pixel-art-bible.md
-docs/03_VisualDevelopment/logo-exploration-prompts.md
-docs/04_Characters/character-dna.md
-docs/06_Animation/animation-bible.md
-docs/08_UnityPipeline/unity-base-project-setup.md
+Documents/GDD/Project/project-overview.md
+Documents/ArtDirection/VisualDevelopment/visual-development-guide.md
+Documents/ArtDirection/VisualDevelopment/concept-book-outline.md
+Documents/ArtDirection/VisualDevelopment/concept-book-page-plan.md
+Documents/ArtDirection/VisualDevelopment/pixel-art-bible.md
+Documents/ArtDirection/VisualDevelopment/logo-exploration-prompts.md
+Documents/Characters/character-dna.md
+Documents/Animation/animation-bible.md
+Documents/UnityPipeline/unity-base-project-setup.md
 ```
 
 ## Fluxo recomendado local + nuvem
@@ -302,7 +304,7 @@ git pull origin main
 ```text
 Estamos trabalhando no projeto Fragmentos do Amanha / Era Zero.
 Use o repositorio GitHub https://github.com/Gravit-Studios/fragmentos-do-amanha como fonte principal.
-Leia primeiro production/current-status.md, production/roadmap.md e docs/08_UnityPipeline/prototype-theo-controller.md.
-O projeto Unity esta em unity/FragmentosDoAmanha.
+Leia primeiro production/current-status.md, production/roadmap.md e Documents/UnityPipeline/prototype-theo-controller.md.
+O projeto Unity esta em Game/Unity/FragmentosDoAmanha.
 Continue a partir da cena Prototype_Theo_Controller, priorizando teste de movimento, camera, Pixel Perfect/Cinemachine e depois tilesets placeholder da Era Zero e Egito.
 ```

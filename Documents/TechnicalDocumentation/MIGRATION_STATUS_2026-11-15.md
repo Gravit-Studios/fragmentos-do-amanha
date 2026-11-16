@@ -11,15 +11,17 @@
 - [x] Phase 2 destination structure is present on main.
 - [x] PR #5 merged: 209 files relocated from legacy roots into Artbook/, Documents/, Production/ and Sprites/.
 - [x] Removed duplicate lowercase roots artbook/, docs/, production/, sprites/ and legacy roots ChatGPT/ and tools/.
+- [x] PR #7 moved the complete Unity project subtree to Game/Unity/FragmentosDoAmanha/; original tree SHA preserved.
 
 ## In progress / pending
 
 - [ ] Confirm Git LFS installation, fetch and fsck on the production workstation.
 - [ ] Validate LFS object availability and sample image/PDF opening locally.
 - [ ] Review the seven large executables inside the embedded Unity AI Assistant package; the package is declared in Packages/manifest.json and must not be pruned without a separate dependency decision.
-- [ ] Capture Unity .meta GUID inventory and baseline Editor validation on the production workstation.
-- [ ] Complete semantic review of migrated categories and update remaining cross-document references.
-- [ ] Relocate Unity project only after local LFS and GUID checks pass.
+- [x] GitHub tree comparison confirms all 3,463 Unity .meta files remain in the moved project subtree.
+- [ ] Open moved project in Unity Editor and validate references/package resolution.
+- [ ] Complete semantic review of migrated categories and remaining cross-document references.
+
 
 ## Repository snapshot
 
@@ -33,12 +35,11 @@
 
 ## Active paths during transition
 
-The Unity project remains at `unity/FragmentosDoAmanha/`. Do not move it manually.
-The target destination is `Game/Unity/FragmentosDoAmanha/`.
+The Unity project is now at `Game/Unity/FragmentosDoAmanha/`.
 All non-Unity content roots now use the approved canonical names.
 
 New artwork is produced in `Sprites/`; only assets explicitly approved with **Aprovado** may be promoted to `Game/ApprovedAssets/`.
 
 ## Next execution batch
 
-Complete link/reference normalization and content indexes. The Unity relocation remains isolated and blocked on local Git LFS and Editor validation.
+Complete local Git LFS verification and Unity Editor/Play Mode validation.

@@ -56,7 +56,7 @@ A prioridade e construir um vertical slice com Era Zero e Egito Antigo. O objeti
 
 Este repositorio deve separar:
 
-- Documentacao de design e producao em `docs/`.
+- Documentacao de design e producao em `Documents/`.
 - Planejamento executavel em `production/`.
 - Assets e estudos visuais em `art/`.
-- Projeto Unity real em `unity/FragmentosDoAmanha/`, somente quando criado pela Unity.
+- Projeto Unity real em `Game/Unity/FragmentosDoAmanha/`, somente quando criado pela Unity.

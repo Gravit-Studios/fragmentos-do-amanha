@@ -1,6 +1,6 @@
 # Project Organization Guide — Fragmentos do Amanha
 
-Status: proposed standard, pending review and merge.
+Status: approved standard, implemented in the repository.
 
 ## Purpose
 This guide defines repository responsibilities, asset lifecycle, naming, approval and Unity safety rules. English is used for paths and filenames; explanatory documentation remains in Portuguese where appropriate.
@@ -60,8 +60,8 @@ Use the current Pixel Art Bible and approved project documents as source of trut
 - Move the entire Unity project as one unit; keep Assets, Packages and ProjectSettings together.
 - Do not commit Library, Temp, Logs, UserSettings, crash logs or local caches.
 - Do not fabricate or manually edit scenes/prefabs when Unity Editor is required.
-- Reopen the project from its new path and validate scenes, prefabs, scripts, sprites, animation clips/controllers and package resolution.
-- Confirm Git LFS is installed and configured on the production workstation before migrating large binary files.
+- Reopen `Game/Unity/FragmentosDoAmanha/` and validate scenes, prefabs, scripts, sprites, animation clips/controllers and package resolution in Unity Editor.
+- Confirm Git LFS is installed and configured on the production workstation; the project relocation is structurally complete, but LFS object integrity must be checked locally.
 
 ## Document precedence
 
