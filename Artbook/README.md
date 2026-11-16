@@ -1,12 +1,15 @@
 # Artbook
 
-Material visual e de referencia que NAO entra diretamente no jogo (nao e importado na Unity). Serve como historico de producao, pitch e referencia de estilo.
+Material de apresentacao, concept art, branding, referencias visuais e publicacoes. Este conteudo documenta a direcao artistica e nao e importado diretamente no jogo.
 
-- `illustration/` - concept art e key art de personagens e cenarios (`characters/`, `environments/`).
-- `concept-book/` - paginas e PDFs do artbook/concept book.
-- `pdf/` - PDFs compilados de producao do concept book.
-- `branding/` - exploracao de logotipo.
-- `marketing/` - materiais de apresentacao/press kit (pendente).
-- `pixel-reference/` - crops de comparacao, "pixel art bible boards" e versoes antigas de sprites usados como referencia/estudo, nao como arte final do jogo.
+## Categorias
 
-Arte que de fato entra no jogo fica em `art/` (raiz) e e espelhada em `unity/FragmentosDoAmanha/Assets/Art/`.
+- `Branding/` - exploracao de logotipo e identidade visual.
+- `CharacterDesign/` - estudos e conceitos de personagens.
+- `EnvironmentDesign/` - concepts e estudos de ambientes.
+- `ConceptArt/` - ilustracoes e key art.
+- `Worldbuilding/` - material visual de universo e lore.
+- `VisualReferences/` - referencias de pixel art, estilo e comparativos.
+- `Publications/` - concept book, PDFs e materiais editoriais.
+
+As artes finais de gameplay sao trabalhadas em `Sprites/`; somente exports explicitamente aprovados sao promovidos a `Game/ApprovedAssets/` e integrados no projeto em `Game/Unity/FragmentosDoAmanha/Assets/`.
