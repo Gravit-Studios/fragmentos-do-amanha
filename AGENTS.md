@@ -5,11 +5,11 @@ Este repositorio e a fonte central do projeto **Fragmentos do Amanha / Era Zero*
 ## Ao iniciar uma nova sessao
 
 1. Leia este arquivo.
-2. Leia `production/current-status.md`.
-3. Leia `production/roadmap.md`.
-4. Leia `production/handoff-current-state.md`.
-5. Para trabalho na Unity, leia tambem `docs/08_UnityPipeline/prototype-theo-controller.md`.
-6. Para trabalho no concept book, leia tambem `docs/03_VisualDevelopment/concept-book-art-direction.md`.
+2. Leia `Production/Status/Current-Status.md`.
+3. Leia `Production/Roadmap/Roadmap.md`.
+4. Leia `Production/Status/Handoff-Current-State.md`.
+5. Para trabalho na Unity, leia tambem `Documents/UnityPipeline/prototype-theo-controller.md`.
+6. Para trabalho no concept book, leia tambem `Documents/ArtDirection/VisualDevelopment/concept-book-art-direction.md`.
 7. Verifique o estado do Git antes de editar.
 8. Se estiver em maquina local, atualize a branch antes de trabalhar:
 
@@ -131,7 +131,7 @@ Pacotes pendentes:
 - 2D Animation;
 - 2D Sprite.
 
-Se uma sessao estiver em uma maquina com outra patch version da Unity 6, pode abrir o projeto, mas deve registrar em `production/current-status.md` se `ProjectSettings/ProjectVersion.txt` mudar.
+Se uma sessao estiver em uma maquina com outra patch version da Unity 6, pode abrir o projeto, mas deve registrar em `Production/Status/Current-Status.md` se `ProjectSettings/ProjectVersion.txt` mudar.
 
 ## Cena principal atual
 
@@ -144,8 +144,8 @@ unity/FragmentosDoAmanha/Assets/Scenes/Prototype_Theo_Controller.unity
 Documentacao:
 
 ```text
-docs/08_UnityPipeline/prototype-theo-controller.md
-production/handoff-current-state.md
+Documents/UnityPipeline/prototype-theo-controller.md
+Production/Status/Handoff-Current-State.md
 ```
 
 Controles atuais:
@@ -179,14 +179,14 @@ unity/FragmentosDoAmanha/Assets/Scripts/UI/PrototypeObjectiveHud.cs
 - Nao criar arquivos Unity falsos fora do editor se isso puder corromper cena, prefab ou asset serializado.
 - Scripts C# podem ser editados normalmente fora da Unity.
 - Cenas e prefabs devem ser preferencialmente criados ou modificados pela Unity, ou por scripts de editor executados pela Unity.
-- Atualizar `production/current-status.md` quando houver mudanca significativa de escopo, cena, pacote, versao Unity ou fluxo.
-- Atualizar `production/roadmap.md` quando uma tarefa for concluida ou uma nova pendencia importante aparecer.
+- Atualizar `Production/Status/Current-Status.md` quando houver mudanca significativa de escopo, cena, pacote, versao Unity ou fluxo.
+- Atualizar `Production/Roadmap/Roadmap.md` quando uma tarefa for concluida ou uma nova pendencia importante aparecer.
 - Manter respostas e documentos em portugues, exceto nomes tecnicos, paths e codigo.
 - Usar ASCII em arquivos novos, salvo se o arquivo existente ja usar acentos de forma consistente.
 
 ## Organization and asset lifecycle (approved 2026-11-15)
 
-The repository is transitioning to the official structure defined in
+The repository follows the official structure defined in
 `Documents/TechnicalDocumentation/PROJECT_ORGANIZATION_GUIDE.md`.
 
 Target top-level areas:
@@ -207,8 +207,7 @@ foreground, props and set pieces.
 
 ### Migration transition
 
-The organization plan has been approved and the documentation policy is being
-updated. Until the dedicated Unity migration phase is completed, the existing
+The documentation, Artbook, Sprites, Production and tooling content has been migrated. Until the dedicated Unity migration phase is completed, the existing
 Unity project remains at `unity/FragmentosDoAmanha/`. Do not move it manually.
 After migration, the canonical Unity path will be
 `Game/Unity/FragmentosDoAmanha/`.
@@ -220,25 +219,24 @@ migration and integration workflow are ready.
 
 ### Current working paths during transition
 
-The existing prompt and technical documentation paths remain authoritative
-until their corresponding documentation migration batch is completed:
+The canonical paths for current creative and technical materials are now under `Documents/`, `Artbook/`, `Sprites/` and `Production/`.
 
 ```text
-docs/03_VisualDevelopment/character-image-prompts.md
-docs/03_VisualDevelopment/environment-image-prompts.md
+Documents/ArtDirection/VisualDevelopment/character-image-prompts.md
+Documents/ArtDirection/VisualDevelopment/environment-image-prompts.md
 unity/FragmentosDoAmanha/Assets/
-artbook/
+Artbook/
 ```
 
-Do not assume a target path exists until the relevant migration batch is merged.
+Do not recreate legacy lowercase roots; use the canonical paths above.
 Do not maintain two competing editable masters.
 
 
 Prompts oficiais:
 
 ```text
-docs/03_VisualDevelopment/character-image-prompts.md
-docs/03_VisualDevelopment/environment-image-prompts.md
+Documents/ArtDirection/VisualDevelopment/character-image-prompts.md
+Documents/ArtDirection/VisualDevelopment/environment-image-prompts.md
 ```
 
 Nao existe mais uma pasta `art/` separada na raiz do repositorio. Regra atual (definida pelo usuario em 2026-07-17):
@@ -250,13 +248,13 @@ unity/FragmentosDoAmanha/Assets/Art/Characters/
 unity/FragmentosDoAmanha/Assets/Art/Tilesets/
 ```
 
-- Tudo que nao entra no jogo (concept art, ilustracao, reference sheets do ChatGPT usados so como referencia de pose/estilo, crops de comparacao) vai para `artbook/` na raiz:
+- Tudo que nao entra no jogo (concept art, ilustracao, reference sheets do ChatGPT usados so como referencia de pose/estilo, crops de comparacao) vai para `Artbook/` na raiz:
 
 ```text
-artbook/illustration/characters/
-artbook/illustration/environments/
-artbook/pixel-reference/characters/
-artbook/pixel-reference/environments/
+Artbook/illustration/characters/
+Artbook/illustration/environments/
+Artbook/pixel-reference/characters/
+Artbook/pixel-reference/environments/
 ```
 
 Ao gerar novas artes que vao ser usadas no jogo, salvar direto em `unity/FragmentosDoAmanha/Assets/Art/...`, nao numa pasta intermediaria.
@@ -279,8 +277,8 @@ Use este prompt em nova conversa, Codex web, tablet, celular ou outro PC:
 ```text
 Estamos trabalhando no projeto Fragmentos do Amanha / Era Zero.
 Use o repositorio GitHub https://github.com/Gravit-Studios/fragmentos-do-amanha como fonte principal.
-Leia AGENTS.md, production/current-status.md, production/roadmap.md e docs/08_UnityPipeline/prototype-theo-controller.md antes de agir.
-Leia tambem production/handoff-current-state.md para pegar o estado final mais recente.
+Leia AGENTS.md, Production/Status/Current-Status.md, Production/Roadmap/Roadmap.md e Documents/UnityPipeline/prototype-theo-controller.md antes de agir.
+Leia tambem Production/Status/Handoff-Current-State.md para pegar o estado final mais recente.
 Continue do estado atual do projeto.
 Se estiver no Codex web, nao assuma que consegue testar Unity; prepare mudancas versionadas e marque Play Mode como pendente.
 Se estiver no PC principal com Unity, priorize testar Prototype_Theo_Controller no Play Mode e ajustar controle, camera, combate, HUD e leitura da sala.
