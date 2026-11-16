@@ -99,17 +99,17 @@ Use a dedicated migration branch; never perform the full migration directly on m
 ## Completion checklist
 
 - [x] Guide reviewed and merged.
-- [ ] README and AGENTS updated.
-- [ ] Inventory and integrity report completed.
+- [x] README and AGENTS updated.
+- [x] Inventory and GitHub tree integrity report completed; local LFS verification remains pending.
 - [ ] Git LFS verified on production workstation (local check).
-- [ ] Destination skeleton created.
-- [ ] Documents and tools migrated.
-- [ ] Artbook migrated and indexed.
-- [ ] Sprites migrated and indexed.
+- [x] Destination skeleton created.
+- [x] Documents and tools migrated.
+- [x] Artbook migrated and category README updated.
+- [x] Initial Sprites relocation completed; semantic review of additional categories remains ongoing.
 - [x] Unity moved with original subtree SHA and GUID-bearing `.meta` files preserved.
 - [ ] Unity Editor validation completed.
-- [ ] Approval-to-Unity handoff documented.
-- [ ] Final audit and migration report published.
+- [x] Approval-to-Unity handoff documented.
+- [ ] Final audit after local LFS and Unity Editor validation.
 
 ## Out of scope
 
