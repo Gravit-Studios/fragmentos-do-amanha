@@ -22,7 +22,7 @@ Unity 6 foi encontrada em:
 O projeto Unity real foi criado em:
 
 ```text
-unity/FragmentosDoAmanha/
+Game/Unity/FragmentosDoAmanha/
 ```
 
 Ja existem:
@@ -65,15 +65,15 @@ cd "/Users/geansantos/Projetos/fragmentos-do-amanha"
 5. Criar o projeto pela Unity Hub em:
 
 ```text
-unity/FragmentosDoAmanha/
+Game/Unity/FragmentosDoAmanha/
 ```
 
 6. Confirmar que a Unity criou pastas reais:
 
 ```text
-unity/FragmentosDoAmanha/Assets/
-unity/FragmentosDoAmanha/Packages/
-unity/FragmentosDoAmanha/ProjectSettings/
+Game/Unity/FragmentosDoAmanha/Assets/
+Game/Unity/FragmentosDoAmanha/Packages/
+Game/Unity/FragmentosDoAmanha/ProjectSettings/
 ```
 
 7. Fazer o primeiro commit do projeto base Unity. **Concluido via Codex.**
