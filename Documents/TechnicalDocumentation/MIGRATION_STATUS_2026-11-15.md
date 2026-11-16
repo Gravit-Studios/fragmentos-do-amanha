@@ -20,7 +20,7 @@
 - [ ] Review the seven large executables inside the embedded Unity AI Assistant package; the package is declared in Packages/manifest.json and must not be pruned without a separate dependency decision.
 - [x] GitHub tree comparison confirms all 3,463 Unity .meta files remain in the moved project subtree.
 - [ ] Open moved project in Unity Editor and validate references/package resolution.
-- [ ] Complete semantic review of migrated categories and update remaining cross-document references.
+- [ ] Complete semantic review of migrated categories and remaining cross-document references.
 
 
 ## Repository snapshot
