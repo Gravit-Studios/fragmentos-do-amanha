@@ -14,7 +14,7 @@ O jogo usa duas camadas de arte:
 
 A migracao dos conteudos criativos e documentais foi incorporada na main. As pastas antigas duplicadas foram removidas; os caminhos canonicos sao:
 
-- `Game/` - assets aprovados e projeto Unity (o projeto Unity ainda aguarda transferencia tecnica).
+- `Game/` - assets aprovados e projeto Unity completo.
 - `Sprites/` - producao visual, PSDs, PNGs, estudos, spritesheets e historico.
 - `Artbook/` - concepts, ilustracoes, referencias, branding e publicacoes.
 - `Documents/` - GDD, narrativa, personagens, game design e documentacao tecnica.
@@ -46,7 +46,7 @@ Produzir em `Sprites/`, preservar PSD + PNG e versoes relevantes, aguardar a apr
 
 ## Unity
 
-O projeto Unity real continua em `unity/FragmentosDoAmanha/` ate a fase especifica de transferencia para `Game/Unity/FragmentosDoAmanha/`. Nao mova essa pasta manualmente. A transferencia sera isolada, preservando `Assets/`, `Packages/`, `ProjectSettings/`, arquivos `.meta` e GUIDs, e validada no Unity Editor.
+O projeto Unity completo agora esta em `Game/Unity/FragmentosDoAmanha/`. A movimentacao preservou a arvore Git original, incluindo `Assets/`, `Packages/`, `ProjectSettings/`, todos os arquivos `.meta` e seus GUIDs. A abertura e os testes no Unity Editor ainda precisam ser confirmados localmente.
 
 ## Escopo inicial
 
