@@ -9,13 +9,13 @@ Este documento nao substitui os arquivos de producao da Unity. Ele consolida a l
 A direcao detalhada de pagina, composicao e densidade visual esta em:
 
 ```text
-docs/03_VisualDevelopment/concept-book-art-direction.md
+Documents/ArtDirection/VisualDevelopment/concept-book-art-direction.md
 ```
 
 O fluxo para receber, separar e validar referencias externas esta em:
 
 ```text
-docs/03_VisualDevelopment/concept-book-reference-intake.md
+Documents/ArtDirection/VisualDevelopment/concept-book-reference-intake.md
 ```
 
 ## Formato fisico alvo
@@ -64,9 +64,9 @@ Status: em exploracao.
 Arquivos relacionados:
 
 ```text
-docs/03_VisualDevelopment/logo-exploration-prompts.md
-docs/03_VisualDevelopment/concept-book-page-plan.md
-art/branding/logo/
+Documents/ArtDirection/VisualDevelopment/logo-exploration-prompts.md
+Documents/ArtDirection/VisualDevelopment/concept-book-page-plan.md
+Artbook/Branding/logo/
 ```
 
 ### 2. Premissa visual
@@ -81,9 +81,9 @@ Status: direcao inicial definida.
 Arquivos relacionados:
 
 ```text
-docs/00_Project/project-overview.md
-docs/03_VisualDevelopment/visual-development-guide.md
-docs/04_Characters/character-dna.md
+Documents/GDD/Project/project-overview.md
+Documents/ArtDirection/VisualDevelopment/visual-development-guide.md
+Documents/Characters/character-dna.md
 ```
 
 ### 3. Personagens principais
@@ -101,9 +101,9 @@ Status: primeira rodada criada.
 Arquivos relacionados:
 
 ```text
-art/pixel/characters/
-art/illustration/characters/
-docs/03_VisualDevelopment/character-image-prompts.md
+Sprites/characters/
+Artbook/ConceptArt/characters/
+Documents/ArtDirection/VisualDevelopment/character-image-prompts.md
 ```
 
 ### 4. Era Zero
@@ -122,11 +122,11 @@ Status: concept e pixel references criados; prototipo jogavel em andamento.
 Arquivos relacionados:
 
 ```text
-art/pixel/environments/era-zero-lab/
-art/illustration/environments/era-zero-lab/
-art/pixel/environments/era-zero-explosion/
-art/illustration/environments/era-zero-explosion/
-unity/FragmentosDoAmanha/Assets/Scenes/Prototype_Theo_Controller.unity
+Sprites/environments/era-zero-lab/
+Artbook/ConceptArt/environments/era-zero-lab/
+Sprites/environments/era-zero-explosion/
+Artbook/ConceptArt/environments/era-zero-explosion/
+Game/Unity/FragmentosDoAmanha/Assets/Scenes/Prototype_Theo_Controller.unity
 ```
 
 ### 5. Primeira era: Egito Antigo
@@ -144,8 +144,8 @@ Status: concept e pixel references criados; ainda falta integracao Unity.
 Arquivos relacionados:
 
 ```text
-art/pixel/environments/egypt-temple/
-art/illustration/environments/egypt-temple/
+Sprites/environments/egypt-temple/
+Artbook/ConceptArt/environments/egypt-temple/
 ```
 
 ### 6. Sistema visual de gameplay
@@ -163,8 +163,8 @@ Status: prototipo funcional placeholder; arte final pendente.
 Arquivos relacionados:
 
 ```text
-docs/08_UnityPipeline/prototype-theo-controller.md
-unity/FragmentosDoAmanha/Assets/Scripts/
+Documents/UnityPipeline/prototype-theo-controller.md
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/
 ```
 
 ### 7. UI e HUD
