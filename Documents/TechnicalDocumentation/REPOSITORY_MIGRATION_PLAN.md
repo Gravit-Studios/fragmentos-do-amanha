@@ -1,6 +1,6 @@
 # Repository Migration Plan — Fragmentos do Amanha
 
-Status: active migration plan. Documentation, Artbook, Sprites, Production and helper tooling content have been migrated to the approved structure. Unity relocation remains pending local LFS/GUID validation.
+Status: content and Unity project relocation merged. Remaining completion gate: local Git LFS verification and Unity Editor/Play Mode validation.
 
 ## Approved decisions
 
@@ -18,7 +18,7 @@ Status: active migration plan. Documentation, Artbook, Sprites, Production and h
 
 ## Current roots inspected
 
-The canonical content roots are now Artbook/, Sprites/, Documents/ and Production/. The Unity project remains at unity/FragmentosDoAmanha/ pending its isolated relocation. The Unity project contributes thousands of files. The repository is sizeable, so migration must be incremental and verified.
+The canonical content roots are Artbook/, Sprites/, Documents/, Production/ and Game/Unity/FragmentosDoAmanha/. The complete Unity project subtree has been relocated without changing its Git tree SHA.
 
 ## Completed content relocation (PR #5)
 
@@ -34,10 +34,12 @@ The canonical content roots are now Artbook/, Sprites/, Documents/ and Productio
 - `sprites/Naiara/` -> `Sprites/Characters/Naiara/References/`.
 - The six legacy roots were removed after relocation. Original blob SHAs were reused to preserve file contents and LFS pointer data.
 
-## Remaining Unity relocation
+## Unity relocation completed in PR #7
 
-- `unity/FragmentosDoAmanha/` -> `Game/Unity/FragmentosDoAmanha/` only after local Git LFS, object integrity and Unity GUID/reference validation.
-- No Unity files or `.meta` files were changed in PR #5.
+- The complete `unity/FragmentosDoAmanha/` subtree was moved to `Game/Unity/FragmentosDoAmanha/` by reusing its original Git tree SHA.
+- All 6,628 file blobs and 3,463 `.meta` files were preserved unchanged, retaining GUIDs.
+- No scene, prefab, asset, package or ProjectSettings contents were rewritten.
+- Local Git LFS object verification and Unity Editor validation remain mandatory.
  
 ## Migration phases
 
@@ -72,16 +74,7 @@ Initial relocation completed in PR #5. Preserve source pages, indexes and meanin
 Initial relocation completed in PR #5 for existing Theo and Naiara materials. Continue semantic classification of additional characters, weapons, enemies and modular environments as content is added. Preserve PSD, PNG and meaningful versions; do not promote any asset without explicit Aprovado.
 
 ### Phase 6 — Move Unity project
-1. Confirm Git LFS on the production workstation before large binary moves.
-2. Move unity/FragmentosDoAmanha/ as a complete directory to Game/Unity/FragmentosDoAmanha/.
-3. Preserve all .meta files and GUIDs.
-4. Preserve Assets, Packages, ProjectSettings, manifest and lockfile.
-5. Verify ignore rules for Unity caches and local-only files.
-6. Open the project from the new path using the recorded Unity version.
-7. Validate scenes, prefabs, animation controllers/clips, sprites, tilemaps, scripts and package resolution.
-8. Run compile and Play Mode smoke tests on the production workstation.
-
-Exit: no missing references; core scenes and animation references validate; Play Mode test recorded. If Unity is unavailable, mark checks pending rather than claiming success.
+Completed structurally in PR #7. The GitHub tree move preserved the complete project and all GUID-bearing metadata. Remaining local exit checks: confirm Git LFS with `git lfs version`, `git lfs pull` and `git lfs fsck`; open the new path in Unity `6000.5.3f1`; inspect Console; open core scenes; run compile and Play Mode smoke tests. These checks cannot be performed by a GitHub tree operation.
 
 ### Phase 7 — Approved asset handoff
 Define export/import presets. For each user-approved asset, copy the selected export to Game/ApprovedAssets and integrate the exact export into the Unity Assets folder. Configure PPU, sprite mode, slicing, pivot, filter/compression, sorting and animation settings as appropriate. Record source version and destination. Validate in-game.
@@ -105,15 +98,15 @@ Use a dedicated migration branch; never perform the full migration directly on m
 
 ## Completion checklist
 
-- [ ] Guide reviewed and merged.
+- [x] Guide reviewed and merged.
 - [ ] README and AGENTS updated.
 - [ ] Inventory and integrity report completed.
-- [ ] Git LFS verified on production workstation.
+- [ ] Git LFS verified on production workstation (local check).
 - [ ] Destination skeleton created.
 - [ ] Documents and tools migrated.
 - [ ] Artbook migrated and indexed.
 - [ ] Sprites migrated and indexed.
-- [ ] Unity moved with GUIDs preserved.
+- [x] Unity moved with original subtree SHA and GUID-bearing `.meta` files preserved.
 - [ ] Unity Editor validation completed.
 - [ ] Approval-to-Unity handoff documented.
 - [ ] Final audit and migration report published.
