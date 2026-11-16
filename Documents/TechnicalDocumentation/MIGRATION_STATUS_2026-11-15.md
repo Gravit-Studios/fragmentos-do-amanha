@@ -8,7 +8,9 @@
 - [x] Phase 0 repository tree inventory captured.
 - [x] Git LFS pointer format verified against representative PNG and PDF objects.
 - [x] PR #3 merged: target directory skeleton and category READMEs created.
-- [x] Phase 2 destination structure is present on main.\n- [x] PR #5 merged: 209 files relocated from legacy roots into Artbook/, Documents/, Production/ and Sprites/.\n- [x] Removed duplicate lowercase roots artbook/, docs/, production/, sprites/ and legacy roots ChatGPT/ and tools/.
+- [x] Phase 2 destination structure is present on main.
+- [x] PR #5 merged: 209 files relocated from legacy roots into Artbook/, Documents/, Production/ and Sprites/.
+- [x] Removed duplicate lowercase roots artbook/, docs/, production/, sprites/ and legacy roots ChatGPT/ and tools/.
 
 ## In progress / pending
 
@@ -16,9 +18,7 @@
 - [ ] Validate LFS object availability and sample image/PDF opening locally.
 - [ ] Review the seven large executables inside the embedded Unity AI Assistant package; the package is declared in Packages/manifest.json and must not be pruned without a separate dependency decision.
 - [ ] Capture Unity .meta GUID inventory and baseline Editor validation on the production workstation.
-- [ ] Migrate legacy documentation and production tooling in reviewed batches.
-- [ ] Migrate Artbook content and update references.
-- [ ] Migrate working Sprites and update asset indexes.
+- [ ] Complete semantic review of migrated categories and update remaining cross-document references.
 - [ ] Relocate Unity project only after local LFS and GUID checks pass.
 
 ## Repository snapshot
@@ -34,7 +34,8 @@
 ## Active paths during transition
 
 The Unity project remains at `unity/FragmentosDoAmanha/`. Do not move it manually.
-The target destination is `Game/Unity/FragmentosDoAmanha/`.\nAll non-Unity content roots now use the approved canonical names.
+The target destination is `Game/Unity/FragmentosDoAmanha/`.
+All non-Unity content roots now use the approved canonical names.
 
 New artwork is produced in `Sprites/`; only assets explicitly approved with **Aprovado** may be promoted to `Game/ApprovedAssets/`.
 
