@@ -10,14 +10,16 @@
 - [x] PR #3 merged: target directory skeleton and category READMEs created.
 - [x] Phase 2 destination structure is present on main.
 - [x] PR #5 merged: 209 files relocated from legacy roots into Artbook/, Documents/, Production/ and Sprites/.
-- [x] Removed duplicate lowercase roots artbook/, docs/, production/, sprites/ and legacy roots ChatGPT/ and tools/.\n- [x] PR #7 moved the complete Unity project subtree to Game/Unity/FragmentosDoAmanha/; original tree SHA preserved.
+- [x] Removed duplicate lowercase roots artbook/, docs/, production/, sprites/ and legacy roots ChatGPT/ and tools/.
+- [x] PR #7 moved the complete Unity project subtree to Game/Unity/FragmentosDoAmanha/; original tree SHA preserved.
 
 ## In progress / pending
 
 - [ ] Confirm Git LFS installation, fetch and fsck on the production workstation.
 - [ ] Validate LFS object availability and sample image/PDF opening locally.
 - [ ] Review the seven large executables inside the embedded Unity AI Assistant package; the package is declared in Packages/manifest.json and must not be pruned without a separate dependency decision.
-- [x] GitHub tree comparison confirms all 3,463 Unity .meta files remain in the moved project subtree.\n- [ ] Open moved project in Unity Editor and validate references/package resolution.
+- [x] GitHub tree comparison confirms all 3,463 Unity .meta files remain in the moved project subtree.
+- [ ] Open moved project in Unity Editor and validate references/package resolution.
 - [ ] Complete semantic review of migrated categories and update remaining cross-document references.
 
 
