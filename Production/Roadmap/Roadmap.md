@@ -1,5 +1,7 @@
 # Roadmap
 
+> Organizacao: a migracao do projeto Unity para `Game/Unity/FragmentosDoAmanha/` foi incorporada. A verificacao local de Git LFS e os testes no Unity Editor continuam como checklist operacional.
+
 ## Escopo da Demo Inicial
 
 Decisao: focar em **Era Zero + Egito** ate existir uma fatia funcional, padronizada e polida, antes de expandir para as outras 5 epocas (Grecia, Medieval, Piratas, Segunda Guerra, Inicio da Internet, Futuro proximo continuam fora do escopo ate aqui fechar).
@@ -17,7 +19,7 @@ Checklist de definicao de "pronto" para a demo inicial:
 - [x] Pixel Perfect Camera e Cinemachine integrados (substituindo camera temporaria). Instalados via Package Manager (Cinemachine 3.1.7, 2D Pixel Perfect 6.0.0). Script `CameraUpgradeSetup.cs` (`Fragmentos do Amanha > Upgrade Camera To Cinemachine + Pixel Perfect (Current Scene)`) roda nas 3 cenas (`Prototype_Theo_Controller`, `VS_Egypt_Blockout`, `VS_EraZero_Lab`), confirmado funcionando em Play Mode. Pendencias conhecidas: confinamento de bounds da camera nao foi migrado automaticamente (precisa de `CinemachineConfiner2D` manual por cena) e o `assetsPPU` do Pixel Perfect Camera fica num valor neutro provisorio, ja que os tiles da Era Zero (~627 PPU), do Egito (~512 PPU) e o sprite do Theo (~795 PPU) foram gerados em resolucoes diferentes.
 - [x] Tileset placeholder proprio para Era Zero e para Egito (mesmo que simples, cada epoca visualmente distinta). Sheets completos (`era-zero-lab-pixel-environment-v03.png`, `egypt-temple-pixel-environment-v03.png`) e tiles individuais (`era-zero-lab-tiles-core-v02.png`, `egypt-temple-tiles-core-v02.png`, corrigidos para preenchimento total sem rotacao/margem branca) ja importados, fatiados (`TilesetImportSetup.cs`) e testados no Tilemap da Unity — emenda validada visualmente sem costura no chao do Egito.
 - [x] Sprite/animacao minima do Theo (ainda que placeholder) substituindo o blockout de caixas. `theo-sprite-v01.png` (pose idle) importado e integrado via `TheoSpriteSetup.cs`. Corrigidos: transparencia real (fundo nao era alpha=0, era um xadrez cinza opaco desenhado na imagem), esticamento (SpriteRenderer estava herdando a escala nao-uniforme do collider do "Theo Placeholder", corrigido com objeto filho "Theo Sprite" com escala inversa) e franja branca residual nas bordas. Validado em Play Mode: proporcao correta, sem esticamento, sem caixa/halo branco. Feixe de luz da lanterna descendo do personagem e efeito de arte intencional, nao bug. Confirmado nas duas cenas (`Prototype_Theo_Controller` e `VS_Egypt_Blockout`) apos rodar `Replace Theo Blockout With Sprite (Current Scene)` em cada uma (cenas ja existentes nao sao atualizadas automaticamente pela troca de codigo).
-- [x] Lista de habilidades de movimento do Theo (dash etc.) definida e com pelo menos uma implementada e testada. Dash implementado e testado em Play Mode (`TheoController.cs`, tecla Shift), confirmado funcionando no PC Windows e no Mac. Decisao registrada em `docs/04_Characters/theo-abilities.md`: para esta demo (Era Zero + Egito), o kit fica no ataque basico + dash; habilidades das proximas epocas ficam para depois da fatia fechar.
+- [x] Lista de habilidades de movimento do Theo (dash etc.) definida e com pelo menos uma implementada e testada. Dash implementado e testado em Play Mode (`TheoController.cs`, tecla Shift), confirmado funcionando no PC Windows e no Mac. Decisao registrada em `Documents/Characters/theo-abilities.md`: para esta demo (Era Zero + Egito), o kit fica no ataque basico + dash; habilidades das proximas epocas ficam para depois da fatia fechar.
 - [x] Build interna jogavel cobrindo Era Zero + Egito. Gerada e testada de ponta a ponta fora do Editor (Windows standalone), incluindo o portal Era Zero -> Egito. Corrigido no processo: Pixel Perfect Camera com resolucao de referencia (960x540 / assetsPPU 54) que preserva o enquadramento original (orthographicSize 5) sem ficar zoom demais nem disparar aviso de resolucao; Theo empurrava fisicamente os inimigos so por encostar (colisor solido na mesma camada), corrigido com `Physics2D.IgnoreCollision` entre o corpo do Theo e de cada inimigo.
 
 Checklist fechada. Com a fatia inicial (Era Zero + Egito) jogavel de ponta a ponta, incluindo build interna standalone testada, a prioridade avanca para a proxima epoca do roadmap de conteudo (ver `Fase 5 — Pos-slice` abaixo para a decisao de escopo/profundidade antes de comecar Grecia).
@@ -33,8 +35,8 @@ Status: em andamento.
 - [x] Criar Production Handbook v1.0.
 - [x] Preparar `.gitignore` e `.gitattributes` para Unity/Git LFS.
 - [ ] Revisar nomes finais do jogo e personagens.
-- [ ] Definir lista de habilidades do Theo. Rascunho pronto para revisao em `docs/04_Characters/theo-abilities.md`.
-- [ ] Definir mecanica de fragmentos. Rascunho pronto para revisao em `docs/00_Project/fragments-mechanic.md`.
+- [ ] Definir lista de habilidades do Theo. Rascunho pronto para revisao em `Documents/Characters/theo-abilities.md`.
+- [ ] Definir mecanica de fragmentos. Rascunho pronto para revisao em `Documents/GDD/Project/fragments-mechanic.md`.
 
 ## Fase 1 — Pre-producao do Vertical Slice
 
@@ -43,7 +45,7 @@ Objetivo: preparar tudo que precisa existir antes da primeira cena jogavel.
 - [x] Definir versao alvo da Unity: Unity 6 LTS.
 - [x] Instalar Unity Hub / Unity 6 LTS na maquina de producao.
 - [ ] Instalar Git LFS na maquina de producao.
-- [x] Criar projeto Unity real em `unity/FragmentosDoAmanha/`.
+- [x] Criar projeto Unity real em `Game/Unity/FragmentosDoAmanha/`.
 - [x] Configurar URP 2D.
 - [x] Configurar Input System.
 - [ ] Configurar Pixel Perfect Camera. Tentativa via `manifest.json` gerou erro de compilacao (API obsoleta na Unity `6000.5.3f1`); removido. Adicionar pelo Package Manager quando for integrar.

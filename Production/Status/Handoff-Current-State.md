@@ -1,5 +1,7 @@
 # Handoff Current State
 
+> Atualizacao de organizacao (2026-11-16): o caminho canonico do projeto Unity agora e `Game/Unity/FragmentosDoAmanha/`. Feche a Unity antes de sincronizar a main e valide LFS/importacao no Editor.
+
 Atualizado em: 2026-07-17
 
 Use este arquivo para retomar *Fragmentos do Amanha / Era Zero* em outro computador, outra sessao de nuvem (Codex web, Claude web), Claude Desktop local (com ou sem MCP for Unity), tablet, celular ou nova conversa, exatamente do ponto onde a producao parou.
@@ -32,9 +34,9 @@ git pull --ff-only origin main
 1. `AGENTS.md`
 2. `production/handoff-current-state.md` (este arquivo)
 3. `production/roadmap.md`
-4. Para Unity: `docs/08_UnityPipeline/prototype-theo-controller.md`
-5. Para arte de personagens: `docs/03_VisualDevelopment/prompts/characters/`
-6. Para sprites/pixel art: `docs/03_VisualDevelopment/sprite-prompt-guide.md`
+4. Para Unity: `Documents/UnityPipeline/prototype-theo-controller.md`
+5. Para arte de personagens: `Documents/ArtDirection/VisualDevelopment/prompts/characters/`
+6. Para sprites/pixel art: `Documents/ArtDirection/VisualDevelopment/sprite-prompt-guide.md`
 
 ## Decisao de escopo em vigor
 
@@ -59,7 +61,7 @@ Executados os itens definidos em `production/unity-handoff-sprint-01-reference.m
 
 O usuario confirmou que o visual das "fichas de personagem" do ChatGPT (`artbook/pixel-reference/characters/theo/chatgpt-2026-07-17/`) e o design definitivo, mas como essas fichas nao dao pra recortar direto (sem transparencia real, frames colados, escala inconsistente entre sub-imagens), decidiu desenhar os frames a mao no Photoshop, um arquivo por pose/frame.
 
-Especificacao fixa (documentada em `unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/README.md`, template de guia em `docs/03_VisualDevelopment/theo-sprite-canvas-template-1024.png`):
+Especificacao fixa (documentada em `Game/Unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/README.md`, template de guia em `Documents/ArtDirection/VisualDevelopment/theo-sprite-canvas-template-1024.png`):
 
 - Canvas fixo `1024x1024` em todo arquivo.
 - Linha de chao (pes) sempre no mesmo Y do canvas -- adotado `y=987`.
@@ -83,7 +85,7 @@ Tres lotes de 8 frames recebidos ate agora, todos com o mesmo problema real: **t
 
 Como o Theo e desenhado de perfil verdadeiro, nao da pra espelhar o sprite inteiro pra gerar a perna oposta (isso viraria o personagem de costas/left-facing). As poses espelhadas precisam ser desenhadas/geradas a parte, mesma direcao (direita), so trocando qual perna lidera.
 
-Referencias do que falta: `docs/03_VisualDevelopment/prompts/characters/theo-run-cycle-mirror-poses-reference.txt` (texto) e `docs/03_VisualDevelopment/prompts/characters/theo-run-cycle-leg-alternation-diagram.html` (diagrama visual com poses coloridas, publicado como artifact). **Aguardando o usuario gerar/desenhar essas poses corretamente e reenviar** antes do ciclo de corrida ficar visualmente correto.
+Referencias do que falta: `Documents/ArtDirection/VisualDevelopment/prompts/characters/theo-run-cycle-mirror-poses-reference.txt` (texto) e `Documents/ArtDirection/VisualDevelopment/prompts/characters/theo-run-cycle-leg-alternation-diagram.html` (diagrama visual com poses coloridas, publicado como artifact). **Aguardando o usuario gerar/desenhar essas poses corretamente e reenviar** antes do ciclo de corrida ficar visualmente correto.
 
 ### Codigo (ja commitado, ja rodado pelo usuario localmente)
 
@@ -110,7 +112,7 @@ Confirmado em Play Mode via Unity MCP: disparado o trigger e capturados prints e
 
 4 frames em `Crouch/theo-sprite-crouch-01.png` a `04.png`, pe realinhado pra y=987. Copiados pro projeto mas **nao integrados** -- `TheoController` nao tem nenhuma mecanica de agachar (sem input, sem colisor menor, sem estado). Guardado pra quando essa mecanica for priorizada.
 
-### Pastas de pose (`unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/`)
+### Pastas de pose (`Game/Unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/`)
 
 `Idle/`, `Run/` (pendente de correcao de perna acima), `Jump/` e `Attack/` completos e integrados. `Crouch/` tem arte mas sem mecanica de jogo. Vazias, aguardando arte no mesmo padrao: `Land/`, `Fall/`, `HitDeath/` (a ficha de personagem NAO cobre essa pose -- precisa ser gerada a parte, item do roadmap Fase 3).
 
@@ -126,10 +128,10 @@ Esta sessao de nuvem **nunca** vai ter acesso a um MCP do Unity, mesmo que o usu
 
 ## Estrutura de pastas do repositorio
 
-- `unity/FragmentosDoAmanha/Assets/Art/...` — **todo** arquivo necessario para o jogo funcionar, incluindo sprites/tilesets ainda nao configurados/importados. Nao existe copia espelhada fora da Unity — arte nova do jogo deve ser salva direto aqui.
+- `Game/Unity/FragmentosDoAmanha/Assets/Art/...` — **todo** arquivo necessario para o jogo funcionar, incluindo sprites/tilesets ainda nao configurados/importados. Nao existe copia espelhada fora da Unity — arte nova do jogo deve ser salva direto aqui.
 - `artbook/` — todo material de concept art, ilustracao, branding, PDFs do concept book e reference sheets/crops que NAO entram no jogo: `illustration/`, `concept-book/`, `pdf/`, `branding/`, `marketing/`, `pixel-reference/`.
-- `ChatGPT/` — documentos de game design/narrativa vindos de outra sessao/ferramenta (`GDD.md`, `game-design/`, `narrativa/`, `nomes/`, `personagens/`), mantidos como referencia historica, sem consolidar com `docs/`/`production/`.
-- `unity/FragmentosDoAmanha/game/` — pasta de build standalone, nao versionada (`.gitignore`).
+- `ChatGPT/` — documentos de game design/narrativa vindos de outra sessao/ferramenta (`GDD.md`, `game-design/`, `narrativa/`, `nomes/`, `personagens/`), mantidos como referencia historica, sem consolidar com `Documents/`/`production/`.
+- `Game/Unity/FragmentosDoAmanha/game/` — pasta de build standalone, nao versionada (`.gitignore`).
 
 Nota de coordenacao com a frente Unity (de outra sessao/ferramenta, focada em artbook/concept art):
 
@@ -145,7 +147,7 @@ Versao registrada:
 Unity 6000.5.3f1
 ```
 
-Abrir pelo Unity Hub, selecionando a pasta `unity/FragmentosDoAmanha` (nao a raiz do repositorio).
+Abrir pelo Unity Hub, selecionando a pasta `Game/Unity/FragmentosDoAmanha` (nao a raiz do repositorio).
 
 Pacotes principais confirmados: URP 2D, Input System `1.19.0`, Cinemachine `3.1.7` (namespace `Unity.Cinemachine`), 2D Pixel Perfect `6.0.0` (`UnityEngine.U2D.PixelPerfectCamera`).
 
@@ -195,7 +197,7 @@ tools/art-pipeline/align_foot_line.py        so translada verticalmente (usado n
 
 ## Proximos passos recomendados (em ordem)
 
-1. Receber e integrar as poses "Reach-Left"/"Recovery-Left" do ciclo de corrida do Theo (ver `docs/03_VisualDevelopment/prompts/characters/theo-run-cycle-mirror-poses-reference.txt`), montar o ciclo final alternando esquerda/direita.
+1. Receber e integrar as poses "Reach-Left"/"Recovery-Left" do ciclo de corrida do Theo (ver `Documents/ArtDirection/VisualDevelopment/prompts/characters/theo-run-cycle-mirror-poses-reference.txt`), montar o ciclo final alternando esquerda/direita.
 2. Rodar os 4 menus de import/build/apply nas 3 cenas de novo com o ciclo de corrida corrigido, confirmar em Play Mode que a animacao le como corrida natural (nao mais saltitando).
 3. Gerar as poses que faltam no Theo, mesmo padrao (canvas 1024x1024, pe em y=987): Pulo, Pouso, Ataque, Cair, e Hit/Death (nao coberta pela ficha de personagem).
 4. Se o usuario confirmar que configurou o MCP for Unity no Claude Desktop local, considerar mover trabalho de teste/Play Mode pra la (ver secao acima) em vez do ciclo manual atual.

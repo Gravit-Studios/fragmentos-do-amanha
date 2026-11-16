@@ -1,101 +1,34 @@
 # Unity Production Pipeline
 
-## Estado atual
+## Canonical project location
 
-O repositorio esta preparado para receber um projeto Unity, mas nao deve conter arquivos Unity falsos. O projeto real deve ser criado pela Unity quando a producao entrar nessa etapa.
+The complete Unity project is maintained at:
 
-Local planejado:
+`Game/Unity/FragmentosDoAmanha/`
 
-`unity/FragmentosDoAmanha/`
+Open that folder in Unity Hub. Do not open the repository root as a Unity project.
 
-Guia de criacao do projeto base: `docs/08_UnityPipeline/unity-base-project-setup.md`.
+## Project baseline
 
-## Estrutura esperada dentro do projeto Unity
+- Unity Editor: `6000.5.3f1` (see `ProjectSettings/ProjectVersion.txt`).
+- Render pipeline: Universal Render Pipeline 2D.
+- Input: Input System.
+- Packages and exact resolved versions: `Packages/manifest.json` and `Packages/packages-lock.json`.
 
-```text
-Assets/
-  Art/
-    Characters/
-    Environments/
-    Tilesets/
-    UI/
-    FX/
-  Audio/
-  Data/
-    Characters/
-    Weapons/
-    Abilities/
-    Enemies/
-  Gameplay/
-  Prefabs/
-  Resources/
-  Scenes/
-  Scripts/
-    Core/
-    Player/
-    Combat/
-    Enemies/
-    Camera/
-    UI/
-    Systems/
-  Settings/
+## Asset lifecycle
 
-Packages/
-ProjectSettings/
-```
+- Working artwork and editable masters live in `Sprites/`.
+- Only assets explicitly approved by the user with **Aprovado** may be copied to `Game/ApprovedAssets/`.
+- Integrate the approved export into `Game/Unity/FragmentosDoAmanha/Assets/` only after approval.
+- Preserve Unity `.meta` files and GUIDs. Never recreate them manually.
 
-## Regras iniciais
+## Safe local update after repository relocation
 
-- Criar o projeto pela Unity Hub ou fluxo oficial da Unity.
-- Confirmar versao LTS antes de iniciar producao pesada.
-- Evitar importar pacotes antes de existir necessidade real.
-- Separar scripts por responsabilidade desde o inicio.
-- Prefabs devem ser modulares e testaveis em cenas pequenas.
-- Assets temporarios devem ser nomeados claramente como placeholder.
+1. Close Unity Editor.
+2. Run `git pull --ff-only origin main` from the repository root.
+3. Confirm Git LFS is installed and all objects are available.
+4. Open `Game/Unity/FragmentosDoAmanha/` in Unity Hub.
+5. Wait for asset import and package resolution.
+6. Check Console, open the primary scenes and run Play Mode smoke tests.
 
-## Configuracoes recomendadas
-
-- Unity 6 LTS ou versao LTS vigente definida antes do inicio.
-- URP 2D.
-- Projeto 2D.
-- Pixel Perfect Camera quando a direcao de resolucao estiver validada.
-- PPU inicial: 32.
-- Grid de tiles: 32x32 px.
-- Sistema de input definido antes de escalar combate.
-- Tilemap para blocagem e tilesets iniciais.
-- Cinemachine pode ser avaliado para camera 2D.
-- Unity 2D Animation pode ser avaliado para personagens modulares.
-- Git LFS antes de adicionar imagens grandes, audio ou binarios do projeto Unity.
-
-## Ordem de implementacao sugerida
-
-1. Cena de teste do Theo.
-2. Movimento basico.
-3. Camera.
-4. Colisao e plataformas.
-5. Vida e dano.
-6. Ataque basico.
-7. Inimigo simples.
-8. Tileset placeholder.
-9. Prefabs modulares.
-10. Cena vertical slice Era Zero.
-11. Cena vertical slice Egito.
-
-## Padrao de pastas para scripts
-
-- `Core/` - utilitarios centrais e bootstrap.
-- `Player/` - controle, movimento e estado do jogador.
-- `Combat/` - dano, hitboxes, hurtboxes e ataques.
-- `Enemies/` - IA simples, patrulha e estados.
-- `Camera/` - camera, limites e seguimento.
-- `UI/` - HUD e menus.
-- `Systems/` - sistemas compartilhados como save, checkpoints e eventos.
-
-## Criterios antes de escalar conteudo
-
-- Theo se move com resposta agradavel.
-- Camera acompanha sem atrapalhar leitura.
-- Dano e invulnerabilidade funcionam.
-- Um inimigo simples fecha o ciclo de combate.
-- Prefabs podem ser reutilizados em mais de uma cena.
-- Tileset inicial permite montar salas rapidamente.
+The repository move preserves Git tree/blob identities; it does not replace local Editor validation.
