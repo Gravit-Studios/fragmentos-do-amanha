@@ -205,59 +205,21 @@ separate collections from protagonists. Environments are modular-first and
 organized by era/location with tilesets, gameplay pieces, backgrounds, parallax,
 foreground, props and set pieces.
 
-### Migration transition
+### Current canonical paths
 
-The documentation, Artbook, Sprites, Production and tooling content has been migrated. Until the dedicated Unity migration phase is completed, the existing
-Unity project remains at `Game/Unity/FragmentosDoAmanha/`. Do not move it manually.
-After migration, the canonical Unity path will be
-`Game/Unity/FragmentosDoAmanha/`.
+The non-Unity content and complete Unity project have been migrated to the approved structure. The canonical Unity path is `Game/Unity/FragmentosDoAmanha/`. The relocation reused the original Unity subtree SHA and preserved all 3,463 `.meta` files and GUIDs.
 
-New visual work belongs in the appropriate `Sprites/` working folder. Only
-explicitly approved exports go to `Game/ApprovedAssets/`; the Unity integration
-copy is placed under the Unity project's `Assets/` folder when that project
-migration and integration workflow are ready.
+Local workstation checks are still required: verify Git LFS objects, open the project from the new path in Unity `6000.5.3f1`, inspect Console/package resolution, and run the core scenes in Play Mode. Do not claim those checks passed until they are run locally.
 
-### Current working paths during transition
+New visual work belongs in the appropriate `Sprites/` working folder. Only explicitly approved exports go to `Game/ApprovedAssets/`; the matching integration copy is placed under `Game/Unity/FragmentosDoAmanha/Assets/` after approval.
 
-The canonical paths for current creative and technical materials are now under `Documents/`, `Artbook/`, `Sprites/` and `Production/`.
-
-```text
-Documents/ArtDirection/VisualDevelopment/character-image-prompts.md
-Documents/ArtDirection/VisualDevelopment/environment-image-prompts.md
-Game/Unity/FragmentosDoAmanha/Assets/
-Artbook/
-```
-
-Do not recreate legacy lowercase roots; use the canonical paths above.
-Do not maintain two competing editable masters.
-
-
-Prompts oficiais:
-
+Canonical visual documentation:
 ```text
 Documents/ArtDirection/VisualDevelopment/character-image-prompts.md
 Documents/ArtDirection/VisualDevelopment/environment-image-prompts.md
 ```
 
-Nao existe mais uma pasta `art/` separada na raiz do repositorio. Regra atual (definida pelo usuario em 2026-07-17):
-
-- Qualquer arquivo necessario para o jogo funcionar -- sprites, tilesets, etc. -- vai direto para dentro do projeto Unity, mesmo antes de ser configurado/importado:
-
-```text
-Game/Unity/FragmentosDoAmanha/Assets/Art/Characters/
-Game/Unity/FragmentosDoAmanha/Assets/Art/Tilesets/
-```
-
-- Tudo que nao entra no jogo (concept art, ilustracao, reference sheets do ChatGPT usados so como referencia de pose/estilo, crops de comparacao) vai para `Artbook/` na raiz:
-
-```text
-Artbook/illustration/characters/
-Artbook/illustration/environments/
-Artbook/pixel-reference/characters/
-Artbook/pixel-reference/environments/
-```
-
-Ao gerar novas artes que vao ser usadas no jogo, salvar direto em `Game/Unity/FragmentosDoAmanha/Assets/Art/...`, nao numa pasta intermediaria.
+Do not recreate legacy lowercase roots or maintain competing editable masters.
 
 ## Antes de finalizar uma tarefa
 
