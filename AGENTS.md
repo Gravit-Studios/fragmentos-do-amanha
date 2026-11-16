@@ -30,7 +30,7 @@ https://github.com/Gravit-Studios/fragmentos-do-amanha
 Projeto Unity dentro do repo:
 
 ```text
-unity/FragmentosDoAmanha
+Game/Unity/FragmentosDoAmanha
 ```
 
 Ao abrir pelo Unity Hub, selecionar a pasta `FragmentosDoAmanha`, nao a raiz do repositorio.
@@ -138,7 +138,7 @@ Se uma sessao estiver em uma maquina com outra patch version da Unity 6, pode ab
 Cena:
 
 ```text
-unity/FragmentosDoAmanha/Assets/Scenes/Prototype_Theo_Controller.unity
+Game/Unity/FragmentosDoAmanha/Assets/Scenes/Prototype_Theo_Controller.unity
 ```
 
 Documentacao:
@@ -158,18 +158,18 @@ Controles atuais:
 Scripts principais:
 
 ```text
-unity/FragmentosDoAmanha/Assets/Scripts/Player/TheoController.cs
-unity/FragmentosDoAmanha/Assets/Scripts/Player/PlayerHealth.cs
-unity/FragmentosDoAmanha/Assets/Scripts/Player/FragmentInventory.cs
-unity/FragmentosDoAmanha/Assets/Scripts/Camera/CameraFollow2D.cs
-unity/FragmentosDoAmanha/Assets/Scripts/Combat/PlayerAttack.cs
-unity/FragmentosDoAmanha/Assets/Scripts/Combat/IDamageable.cs
-unity/FragmentosDoAmanha/Assets/Scripts/Enemies/PrototypeEnemy.cs
-unity/FragmentosDoAmanha/Assets/Scripts/Systems/TemporalFragment.cs
-unity/FragmentosDoAmanha/Assets/Scripts/Systems/PrototypeObjectiveState.cs
-unity/FragmentosDoAmanha/Assets/Scripts/UI/PrototypeHealthHud.cs
-unity/FragmentosDoAmanha/Assets/Scripts/UI/PrototypeFragmentHud.cs
-unity/FragmentosDoAmanha/Assets/Scripts/UI/PrototypeObjectiveHud.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/Player/TheoController.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/Player/PlayerHealth.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/Player/FragmentInventory.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/Camera/CameraFollow2D.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/Combat/PlayerAttack.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/Combat/IDamageable.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/Enemies/PrototypeEnemy.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/Systems/TemporalFragment.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/Systems/PrototypeObjectiveState.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/UI/PrototypeHealthHud.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/UI/PrototypeFragmentHud.cs
+Game/Unity/FragmentosDoAmanha/Assets/Scripts/UI/PrototypeObjectiveHud.cs
 ```
 
 ## Regras de trabalho
@@ -208,7 +208,7 @@ foreground, props and set pieces.
 ### Migration transition
 
 The documentation, Artbook, Sprites, Production and tooling content has been migrated. Until the dedicated Unity migration phase is completed, the existing
-Unity project remains at `unity/FragmentosDoAmanha/`. Do not move it manually.
+Unity project remains at `Game/Unity/FragmentosDoAmanha/`. Do not move it manually.
 After migration, the canonical Unity path will be
 `Game/Unity/FragmentosDoAmanha/`.
 
@@ -224,7 +224,7 @@ The canonical paths for current creative and technical materials are now under `
 ```text
 Documents/ArtDirection/VisualDevelopment/character-image-prompts.md
 Documents/ArtDirection/VisualDevelopment/environment-image-prompts.md
-unity/FragmentosDoAmanha/Assets/
+Game/Unity/FragmentosDoAmanha/Assets/
 Artbook/
 ```
 
@@ -244,8 +244,8 @@ Nao existe mais uma pasta `art/` separada na raiz do repositorio. Regra atual (d
 - Qualquer arquivo necessario para o jogo funcionar -- sprites, tilesets, etc. -- vai direto para dentro do projeto Unity, mesmo antes de ser configurado/importado:
 
 ```text
-unity/FragmentosDoAmanha/Assets/Art/Characters/
-unity/FragmentosDoAmanha/Assets/Art/Tilesets/
+Game/Unity/FragmentosDoAmanha/Assets/Art/Characters/
+Game/Unity/FragmentosDoAmanha/Assets/Art/Tilesets/
 ```
 
 - Tudo que nao entra no jogo (concept art, ilustracao, reference sheets do ChatGPT usados so como referencia de pose/estilo, crops de comparacao) vai para `Artbook/` na raiz:
@@ -257,7 +257,7 @@ Artbook/pixel-reference/characters/
 Artbook/pixel-reference/environments/
 ```
 
-Ao gerar novas artes que vao ser usadas no jogo, salvar direto em `unity/FragmentosDoAmanha/Assets/Art/...`, nao numa pasta intermediaria.
+Ao gerar novas artes que vao ser usadas no jogo, salvar direto em `Game/Unity/FragmentosDoAmanha/Assets/Art/...`, nao numa pasta intermediaria.
 
 ## Antes de finalizar uma tarefa
 
