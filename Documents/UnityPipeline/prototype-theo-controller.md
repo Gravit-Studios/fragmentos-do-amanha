@@ -2,7 +2,7 @@
 
 ## Cena
 
-`unity/FragmentosDoAmanha/Assets/Scenes/Prototype_Theo_Controller.unity`
+`Game/Unity/FragmentosDoAmanha/Assets/Scenes/Prototype_Theo_Controller.unity`
 
 ## Objetivo
 
