@@ -27,7 +27,7 @@ CANVAS_W, CANVAS_H = 900, 1024
 
 # Idle sprite's own measured character bbox (excluding the lantern
 # light-spray effect), measured via PIL against
-# unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/theo-sprite-v03.png (368x1024 canvas).
+# Game/Unity/FragmentosDoAmanha/Assets/Art/Characters/Theo/theo-sprite-v03.png (368x1024 canvas).
 # Previous constants (v02, 1400x1536 canvas, bbox (174, 92, 784, 1140)) are
 # obsolete now that v03 is the adopted sprite -- re-measure again if the
 # idle sprite is regenerated.
