@@ -31,7 +31,7 @@ Clonado direto pelo Unity Hub (import project from Git). Nao usar mais os caminh
 Projeto Unity:
 
 ```text
-C:\Users\Gean Santos\Downloads\fragmentos-do-amanha\unity\FragmentosDoAmanha
+C:\Users\Gean Santos\Downloads\fragmentos-do-amanha\Game\Unity\FragmentosDoAmanha
 ```
 
 ### Mac
