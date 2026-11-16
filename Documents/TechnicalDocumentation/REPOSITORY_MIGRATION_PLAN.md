@@ -20,29 +20,25 @@ Status: active migration plan. Documentation, Artbook, Sprites, Production and h
 
 The canonical content roots are now Artbook/, Sprites/, Documents/ and Production/. The Unity project remains at unity/FragmentosDoAmanha/ pending its isolated relocation. The Unity project contributes thousands of files. The repository is sizeable, so migration must be incremental and verified.
 
-## Initial source-to-target map
+## Completed content relocation (PR #5)
 
-- unity/FragmentosDoAmanha/ -> Game/Unity/FragmentosDoAmanha/ (move complete project as one unit; preserve .meta files and GUIDs).
-- artbook/branding/ -> Artbook/Branding/.
-- artbook/illustration/characters/ -> Artbook/CharacterDesign/.
-- artbook/illustration/environments/ -> Artbook/EnvironmentDesign/.
-- artbook/pixel-reference/ -> Artbook/VisualReferences/PixelArt/.
-- artbook/concept-book/ and artbook/pdf/ -> Artbook/Publications/.
-- sprites/Theo/ and sprites/Naiara/ -> Sprites/Characters/<Character>/, sorted into concepts, studies, sheets and animation actions.
-- docs/03_VisualDevelopment/prompts/ -> Production/Prompts/ by asset category.
-- durable docs/03_VisualDevelopment standards -> Documents/ArtDirection/.
-- docs/04_Characters/ and ChatGPT/personagens/ -> Documents/Characters/, after comparison.
-- docs/06_Animation/ -> Documents/Animation/.
-- docs/08_UnityPipeline/ -> Documents/UnityPipeline/.
-- ChatGPT/GDD.md and ChatGPT/ESPECIFICACOES-TECNICAS.md -> Documents/GDD/ and Documents/TechnicalDocumentation/, after comparing against current docs.
-- ChatGPT/game-design/ -> Documents/GameDesign/.
-- ChatGPT/narrativa/ -> Documents/Narrative/.
-- ChatGPT/nomes/ -> classify into Documents/WorldBible/ or Documents/GameDesign/ after content review.
-- production status, handoff and roadmap -> Production/Status/ and Production/Roadmap/.
-- tools/art-pipeline/ -> Production/Tools/ArtPipeline/.
+- `artbook/branding/` -> `Artbook/Branding/Logo/`.
+- `artbook/concept-book/` -> `Artbook/Publications/ConceptBook/`.
+- `artbook/illustration/characters/` -> `Artbook/CharacterDesign/Illustrations/Characters/`.
+- `artbook/illustration/environments/` -> `Artbook/EnvironmentDesign/Illustrations/Environments/`.
+- `artbook/pixel-reference/` -> `Artbook/VisualReferences/PixelArt/`.
+- `artbook/pdf/` -> `Artbook/Publications/PDF/`.
+- `docs/` and `ChatGPT/` -> categorized subfolders under `Documents/`.
+- `production/` and `tools/art-pipeline/` -> `Production/Status/`, `Production/Roadmap/`, `Production/Workflows/` and `Production/Tools/ArtPipeline/`.
+- `sprites/Theo/` -> `Sprites/Characters/Theo/`, separated into Source, References and Animation actions.
+- `sprites/Naiara/` -> `Sprites/Characters/Naiara/References/`.
+- The six legacy roots were removed after relocation. Original blob SHAs were reused to preserve file contents and LFS pointer data.
 
-This is a routing map, not a blind move list. Inspect content, references and binary validity before moving each batch.
+## Remaining Unity relocation
 
+- `unity/FragmentosDoAmanha/` -> `Game/Unity/FragmentosDoAmanha/` only after local Git LFS, object integrity and Unity GUID/reference validation.
+- No Unity files or `.meta` files were changed in PR #5.
+ 
 ## Migration phases
 
 ### Phase 0 — Inventory and safety baseline
@@ -70,10 +66,10 @@ Create target directories and concise README/index files. Do not move assets yet
 Move documents by category; compare duplicate GDD, technical specs, character briefs and visual guidelines; preserve provenance; move prompts and helper scripts; update Markdown and script paths.
 
 ### Phase 4 — Migrate Artbook
-Move branding, concept book, illustrations, pixel references and publications. Preserve source pages, indexes and meaningful versions. Validate PDFs and images.
+Initial relocation completed in PR #5. Preserve source pages, indexes and meaningful versions; complete category/index review and validate media locally where possible.
 
 ### Phase 5 — Migrate Sprites
-Separate protagonists, enemies and bosses. Organize weapons by era then character. Organize environments by era/location and modular function. Preserve PSD, PNG and meaningful versions. Do not promote any asset without explicit Aprovado.
+Initial relocation completed in PR #5 for existing Theo and Naiara materials. Continue semantic classification of additional characters, weapons, enemies and modular environments as content is added. Preserve PSD, PNG and meaningful versions; do not promote any asset without explicit Aprovado.
 
 ### Phase 6 — Move Unity project
 1. Confirm Git LFS on the production workstation before large binary moves.
