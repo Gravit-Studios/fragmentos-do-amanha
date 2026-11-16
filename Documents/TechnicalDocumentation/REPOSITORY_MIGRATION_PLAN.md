@@ -1,6 +1,6 @@
 # Repository Migration Plan — Fragmentos do Amanha
 
-Status: prepared plan. No production assets or Unity project have been moved by this change.
+Status: active migration plan. Documentation, Artbook, Sprites, Production and helper tooling content have been migrated to the approved structure. Unity relocation remains pending local LFS/GUID validation.
 
 ## Approved decisions
 
@@ -18,7 +18,7 @@ Status: prepared plan. No production assets or Unity project have been moved by 
 
 ## Current roots inspected
 
-The repository currently contains artbook/, sprites/, docs/, ChatGPT/, production/, tools/ and unity/FragmentosDoAmanha/, plus root project instructions and configuration. The Unity project contributes thousands of files. The repository is sizeable, so migration must be incremental and verified.
+The canonical content roots are now Artbook/, Sprites/, Documents/ and Production/. The Unity project remains at unity/FragmentosDoAmanha/ pending its isolated relocation. The Unity project contributes thousands of files. The repository is sizeable, so migration must be incremental and verified.
 
 ## Initial source-to-target map
 
